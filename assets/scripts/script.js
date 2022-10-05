@@ -30,19 +30,20 @@ const renderStudents = () => {
   students.forEach((student) => {
     const studentEl = document.createElement("li");
     let text = student.name;
+    console.log(student.name);
     studentEl.textContent = text;
     studentsList.append(studentEl);
   });
 };
 const addAllStudentsHandler = () => {
   const newStudent = {
-    name,
-    dateOfBirth,
-    house,
-    wizard,
-    ancestry,
-    hogwartsStaff,
-    hogwartsStudent,
+    name: name,
+    // date: dateOfBirth,
+    // house: house,
+    // wizard,
+    // ancestry,
+    // hogwartsStaff,
+    // hogwartsStudent,
   };
   students.push(newStudent);
   renderStudents();
