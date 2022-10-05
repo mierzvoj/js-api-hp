@@ -43,3 +43,20 @@ button:active {
   max-width: 90%;
   margin: 2rem auto;
 }
+
+#students_list {
+  display: none;
+  list-style: none;
+  padding: 1rem;
+}
+
+#students_list.visible {
+  display: block;
+}
+
+#students_list li {
+  margin: 1rem;
+  color: #ff0062;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
