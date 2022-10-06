@@ -16,36 +16,28 @@ const renderStudents = () => {
       return response.json();
     })
     .then((allStudents) => {
-      const names = allStudents.map((student) => student.name).join;
-    });
+      const names = allStudents.map((student) => student.name).join("\n");
+      console.log(names);
+      students.push(names);
+      const studentsList = document.getElementById("students_list");
+      if (students.length === 0) {
+        studentsList.classList.remove("visible");
+        return;
+      } else {
+        studentsList.classList.add("visible");
+      }
+      studentsList.innerHTML = students;
+      // students.forEach((student) => {
+      //   const studentEl = document.createElement("li");
 
-  const studentsList = document.getElementById("students_list");
-  if (students.length === 0) {
-    studentsList.classList.remove("visible");
-    return;
-  } else {
-    studentsList.classList.add("visible");
-  }
-  studentsList.innerHTML = "";
-  students.forEach((student) => {
-    const studentEl = document.createElement("li");
-    let text = student.name;
-    console.log(student.name);
-    studentEl.textContent = text;
-    studentsList.append(studentEl);
-  });
+      //   studentEl.textContent = "";
+      //   studentsList.append(studentEl);
+
+      //   studentsList.innerHTML = studentEl;
+      // });
+    });
 };
 const addAllStudentsHandler = () => {
-  const newStudent = {
-    name: name,
-    // date: dateOfBirth,
-    // house: house,
-    // wizard,
-    // ancestry,
-    // hogwartsStaff,
-    // hogwartsStudent,
-  };
-  students.push(newStudent);
   renderStudents();
 };
 

@@ -24,6 +24,9 @@ button {
   border-radius: 5px;
   background: #ff0062;
   cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
 }
 
 button:focus {
